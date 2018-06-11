@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace TestyJednostkowe
 {
-    class Program
+    class myClass
     {
-        static void Main(string[] args)
-        {
 
-
-        }
     }
 }
