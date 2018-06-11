@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TestyJednostkowe
 {
-    class myClass
+    public interface ivocabularies
     {
-
+        List<vocabulary> GetItems();
     }
 }
