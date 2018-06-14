@@ -14,7 +14,7 @@ namespace UnitTestProject1
             //arange
             Mock<ivocabularies> mockObject = new Mock<ivocabularies>();
             //act
-            mockObject.Setup(x => x.Log("tekst"));
+            //mockObject.Setup(x => x.Log("tekst"));
             mockObject.Object.Log("tekst");
             //asert
             mockObject.Verify(x => x.Log("tekst"),Times.Exactly(1));

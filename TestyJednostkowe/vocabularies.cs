@@ -20,6 +20,11 @@ namespace TestyJednostkowe
             };
         }
 
+        public string Convert(string tekst)
+        {
+            return tekst.ToUpper();
+        }
+
         public List<vocabulary> GetItems()
         {
             return this.lista;
