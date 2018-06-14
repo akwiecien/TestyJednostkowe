@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="GetItemsMetodTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Log_MethodTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

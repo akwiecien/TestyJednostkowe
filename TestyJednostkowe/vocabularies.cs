@@ -25,5 +25,9 @@ namespace TestyJednostkowe
             return this.lista;
         }
 
+        public void Log(string tekst)
+        {
+            //TODO
+        }
     }
 }

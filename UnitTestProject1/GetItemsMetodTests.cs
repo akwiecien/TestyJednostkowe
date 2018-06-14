@@ -38,6 +38,7 @@ namespace UnitTestProject1
             Assert.AreEqual("fake", vocsMoq.Object.GetItems()[0].eng);
             Assert.AreEqual(1, vocsMoq.Object.GetItems()[0].id);
             Assert.AreEqual(new DateTime(2018, 06, 11).ToString(), vocsMoq.Object.GetItems()[0].nextRepeat.ToString());
+            vocsMoq.Verify();
         }
         /// <summary>
         /// Prywatna metoda dla testowania metody GetItems()
@@ -50,5 +51,7 @@ namespace UnitTestProject1
                 new vocabulary{id=1,pol="falszywy",eng="fake",nextRepeat=new DateTime(2018,06,11)}
             };
         }
+
+
     }
 }

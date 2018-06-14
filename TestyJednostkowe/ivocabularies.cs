@@ -9,5 +9,6 @@ namespace TestyJednostkowe
     public interface ivocabularies
     {
         List<vocabulary> GetItems();
+        void Log(string tekst);
     }
 }
