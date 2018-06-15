@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestyJednostkowe;
 using Moq;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace UnitTestProject1
 {
@@ -15,12 +16,15 @@ namespace UnitTestProject1
             Mock<ivocabularies> vocsMoq = new Mock<ivocabularies>();
             //jeśli nie implementujemy interface tylko klasę, to metoda musi być virtual ??
             vocsMoq.Setup(x => x.GetItems()).Returns(itemsAtrapa());
+            var vocs = vocsMoq.Object.GetItems();
+            
             //Wyobraśmy sobie sytuację, że motoda GetItems() zwraca nam kolekcję obiektów
             //pozyskany z bazy danych lub z rest.
-            //Nie możemy tworzyć testu na żywej bazie danyc. Baza bedzie się zmieniać, lub może zniknąć
+            //Nie możemy tworzyć testu na żywej bazie danych. Baza bedzie się zmieniać, lub może zniknąć
             //dlatego klasa moq będzie na potrzeby unit testu udawać vocabularies i zwróci nam dane na niby z bazy danych
             //a jednocześne przetestuje nam w pełni klasę która się łączy z bazą danych
             Assert.AreEqual(1, vocsMoq.Object.GetItems().Count);
+            Assert.AreEqual("falszywy", vocs[0].pol);
         }
         [TestMethod][Owner("akwiecien")]
         public void GetItemsIsNotNull()

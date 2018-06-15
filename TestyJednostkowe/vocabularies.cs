@@ -20,19 +20,14 @@ namespace TestyJednostkowe
             };
         }
 
-        public string Convert(string tekst)
-        {
-            return tekst.ToUpper();
-        }
-
         public List<vocabulary> GetItems()
         {
             return this.lista;
         }
 
-        public void Log(string tekst)
+        public vocabulary GetFirst()
         {
-            //TODO
+            return GetItems().First();
         }
     }
 }
