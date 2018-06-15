@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using TestyJednostkowe;
@@ -48,6 +49,20 @@ namespace UnitTestProject1
                 new vocabulary{id=1,pol="falszywy",eng="fake",nextRepeat=new DateTime(2018,06,11)},
                 new vocabulary{id=1,pol="falszywy2",eng="fake2",nextRepeat=new DateTime(2018,06,13)}
             };
+        }
+
+        int i = 1;
+        [TestMethod]
+        public void recursiveMethod()
+        {
+            string guid1 = Guid.NewGuid().ToString();
+            Regex reg = new Regex("^[a-z,0-9]{8}-[a-z,0-9]{4}-[a-z,0-9]{4}-[a-z,0-9]{4}-[a-z,0-9]{12}$");
+            bool match = reg.IsMatch(guid1);
+
+            Assert.IsTrue(match);
+
+            i++;
+            if (i < 11) { recursiveMethod(); }
         }
     }
 }
