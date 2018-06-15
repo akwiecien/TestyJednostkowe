@@ -12,9 +12,7 @@ namespace TestyJednostkowe
         {
             vocabularies vocs = new vocabularies();
             var lista = vocs.GetItems();
-
             lista.ForEach(x => Console.WriteLine("{0} {1} {2}", x.pol, x.eng, x.nextRepeat.ToString("yyyy-MM-dd")));
-
             Console.ReadLine();
         }
     }
